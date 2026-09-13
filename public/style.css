@@ -12,12 +12,23 @@ body {
     sans-serif,
     -apple-system,
     BlinkMacSystemFont;
-  background-color: #121212;
   color: #ffffff;
   text-align: center;
   margin: auto;
   padding: 30px 20px;
   max-width: 800px;
+}
+
+/* --- NEPRŮSTŘELNÉ POZADÍ PRO MOBILY I PC --- */
+body::before {
+  content: "";
+  position: fixed; /* Přilepí se na obrazovku */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Vždy přesně na výšku displeje */
+  z-index: -1; /* Pošle pozadí úplně dozadu za texty a tlačítka */
+  background: linear-gradient(135deg, #121212 0%, #180836 50%, #0a211e 100%);
 }
 
 h1 {

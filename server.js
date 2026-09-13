@@ -81,8 +81,8 @@ app.get("/api/erasmus-destinace/:mesto", async (req, res) => {
     const tlak = pocasi.main.pressure;
     const viditelnost = pocasi.visibility / 1000;
     const teplota = pocasi.main.temp;
-    const PocitovaTeplota = pocasi.main.feels_like;
-    const NejvyssiTeplota = pocasi.main.temp_max;
+    const pocitovaTeplota = pocasi.main.feels_like;
+    const nejvyssiTeplota = pocasi.main.temp_max;
     const nejnizzsiTeplota = pocasi.main.temp_min;
     const rychlostVetru = pocasi.wind.speed;
     const popisPocasi = pocasi.weather[0].description;
@@ -131,7 +131,6 @@ app.get("/api/erasmus-destinace/:mesto", async (req, res) => {
     const nativniJazyk = stat.languages
       .map((jazyk) => jazyk.native_name)
       .join(", ");
-    const origoJazyk = stat.languages.map((jazyk) => jazyk.name).join(", ");
     const menaStatuSymbol = stat.currencies[0].symbol;
     const menaStatuKod = stat.currencies[0].code; /// KOD MENY PRO SPAROVANI S EXCHANGERATE API
     ///
@@ -150,8 +149,8 @@ app.get("/api/erasmus-destinace/:mesto", async (req, res) => {
       hledaneMesto: jmenoMesta,
       aktualniCas: aktualniCasMesto,
       teplota: `${teplota}°C`,
-      PocitovaTeplota: `${PocitovaTeplota}°C`,
-      NejvyssiTeplota: `${NejvyssiTeplota}°C`,
+      pocitovaTeplota: `${pocitovaTeplota}°C`,
+      nejvyssiTeplota: `${nejvyssiTeplota}°C`,
       nejnizzsiTeplota: `${nejnizzsiTeplota}°C`,
       rychlostVetru: `${rychlostVetru}km/h`,
       tlak: `${tlak}hPa`,

@@ -40,8 +40,8 @@ tlacitko.addEventListener("click", async () => {
        <img src="https://openweathermap.org/img/wn/${data.ikonaPocasi}.png" alt="Ikona počasí" style="vertical-align: middle;">   
       </p>
       <p><b>Východ / Západ slunce:</b> ${data.vychod} | ${data.zapad}</p>
-      <p><b>Pocitová teplota:</b> ${data.PocitovaTeplota}</p>
-      <p><b>Dnešní minimum / maximum:</b> ${data.nejnizzsiTeplota} / ${data.NejvyssiTeplota}</p>
+      <p><b>Pocitová teplota:</b> ${data.pocitovaTeplota}</p>
+      <p><b>Dnešní minimum / maximum:</b> ${data.nejnizzsiTeplota} / ${data.nejvyssiTeplota}</p>
       <p><b>Vítr:</b> ${data.rychlostVetru} | <b>Tlak:</b> ${data.tlak}</p>
       <p><b>Viditelnost:</b> ${data.viditelnost} km</p>
 
@@ -65,7 +65,7 @@ tlacitko.addEventListener("click", async () => {
 
 /// DOPORUCIT NAHODNE MESTO
 doporucit.addEventListener("click", async () => {
-  vysledekDiv.innerHTML = `<h3 style="color: #03DAC6;"> Losuji město</h3>`;
+  vysledekDiv.innerHTML = `<h3 style="color: #03DAC6;"> Vybírám město... město</h3>`;
   const odpoved = await fetch("/api/doporucit");
   const data = await odpoved.json();
   policko.value = data.nahodneVybraneMesto;
