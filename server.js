@@ -130,7 +130,6 @@ app.get("/api/erasmus-destinace/:mesto", async (req, res) => {
     const menaStatuSymbol = stat.currencies[0].symbol;
     const menaStatuKod = stat.currencies[0].code; /// KOD MENY PRO SPAROVANI S EXCHANGERATE API
     ///
-    console.log(origoJazyk);
 
     /// EXCHANGERATE API, ZISKANI MEN S CACHOVÁNÍM
     const API_KLIC_KURZY = process.env.API_KLIC_KURZY;
