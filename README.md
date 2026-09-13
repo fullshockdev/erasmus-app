@@ -1,5 +1,9 @@
 # Erasmus App 🌍
 
+[![Node.js](https://img.shields.io/badge/Node.js-v18%2B-green.svg)](https://nodejs.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Render](https://img.shields.io/badge/Hosted%20on-Render-blue.svg)](https://render.com)
+
 Komplexní webová aplikace v Node.js, která umožňuje objevování, výběr a filtrování ideálních destinací. Aplikace kombinuje reálná data o počasí, měnových kurzech a detailní informace o státech, přičemž je optimalizovaná pro bezplatný provoz na cloudu s důrazem na výkon a ochranu soukromí.
 
 ---
@@ -42,10 +46,33 @@ Komplexní webová aplikace v Node.js, která umožňuje objevování, výběr a
 
 ---
 
+## 📂 Struktura projektu
+Podle tvého adresáře ve VS Code vypadá organizace souborů takto:
+
+```text
+erasmus-app/
+├── public/            # Frontendová část
+│   ├── favicon.ico    # Ikona webu
+│   ├── index.html     # Hlavní stránka
+│   ├── script.js      # Frontendová logika a slider
+│   └── style.css      # Vizuální styly od Gemini
+├── .env               # Lokální proměnné (skryté před Gitem)
+├── .gitignore         # Soubory ignorované Gitem
+├── package.json       # Konfigurace závislostí Node.js
+├── package-lock.json  # Uzamčené verze balíčků
+├── README.md          # Dokumentace projektu
+├── server.js          # Hlavní backend a API routy
+├── stahovac.js        # Pomocný skript pro stahování dat
+└── staty.json         # Lokální databáze států
+```
+---
+
 ##  Konfigurace prostředí (`.env`)
 Pro správné fungování aplikace je nutný soubor `.env` s následujícími API klíči:
 
 ```env
-API_KLIC_POCASI=klic_z_restcountries
+API_KLIC_STATYI=klic_z_restcountries
 API_KLIC_POCASI=klic_z_openwather
 API_KLIC_KURZY=klic_z_exchangerate
+```
+
