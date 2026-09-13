@@ -31,12 +31,17 @@ async function ziskejKurz(apiKlic) {
   return kurzCacheData;
 }
 
+/// debug
 app.get("/api/debug-kurzy", (req, res) => {
   res.json({
     datum: kurzCacheDatum,
     data: kurzCacheData,
   });
 });
+app.get("/ping", (req, res) => {
+  res.send("OK");
+});
+///
 
 ///
 
