@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erasmus Destinace</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+  </head>
+  <body>
+    <h1>Najdi svou vysněnou destinaci!</h1>
+
+    <!-- cudliky -->
+    <div class="vyhledavaci-sekce">
+      <input type="text" id="polickoMesto" placeholder="Zadej název města..." />
+      <button id="tlacitkoHledat">Vyhledat</button>
+      <button id="tlacitkoDoporucit">Doporučit náhodné</button>
+    </div>
+
+    <hr />
+
+    <!-- box filtry -->
+    <div class="filtr-box">
+      <h3>Chytré filtry</h3>
+
+      <div class="filtry-vedle-sebe">
+        <div class="filtr-polozka">
+          <label for="filtrJazyk">Preferovaný jazyk:</label>
+          <select id="filtrJazyk">
+            <option value="vse">Jakýkoliv</option>
+            <option value="English">Angličtina</option>
+            <option value="Spanish">Španělština</option>
+            <option value="German">Němčina</option>
+            <option value="French">Francouzština</option>
+          </select>
+        </div>
+
+        <div class="filtr-polozka" style="flex: 1; min-width: 200px">
+          <label>Teplota: <b id="hodnotaTeplota"></b></label>
+          <div id="sliderTeplota"></div>
+        </div>
+
+        <div class="filtr-polozka" style="flex: 1; min-width: 200px">
+          <label>Populace : <b id="hodnotaPopulace"></b></label>
+          <div id="sliderPopulace"></div>
+        </div>
+      </div>
+
+      <button id="tlacitkoAplikovatFiltry">Aplikovat filtry</button>
+    </div>
+
+    <hr />
+
+    <!-- vysledek na webu -->
+    <div id="vysledek"></div>
+    <!-- vysledek na webu -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
